@@ -1,0 +1,35 @@
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+# ... (similar functions for multiply and divide)
+
+while True:
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    # ... (other options)
+
+    choice = input("Enter choice(1/2/3/4): ")
+
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter numbers only.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+        # ... (handle other operations)
+    else:
+        print("Invalid input")
+
+    next_calculation = input("Do you want to perform another calculation? (yes/no): ")
+    if next_calculation.lower() != "yes":
+        break
